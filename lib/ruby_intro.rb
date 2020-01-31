@@ -21,7 +21,7 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
-  if arr.empty? || arr.length == 1 
+  if arr.empty? || arr.length == 1
     false
   else
     for i in 0..arr.length - 1
@@ -44,10 +44,15 @@ end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  /[bcdfghjklmnpqrstvwxyz]/i.match(s[0])
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if /[a-z\W]/i.match(s) || s.empty?
+    return false
+  end
+  s.to_i(2) % 4 == 0
 end
 
 # Part 3
@@ -74,6 +79,7 @@ end
 def isbn
   @isbn
 end
+
 def isbn=(x)
   @isbn = x
 end
@@ -81,6 +87,7 @@ end
 def price
   @price
 end
+
 def price=(x)
   @price = x
 end
