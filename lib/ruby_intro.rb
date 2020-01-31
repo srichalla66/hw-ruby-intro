@@ -39,6 +39,7 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
@@ -53,4 +54,37 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+def initialize(isbn, price)
+  if isbn.empty?
+    raise ArgumentError.new("Expected a value for ISBN")
+  end
+  
+  if price <= 0
+    raise ArgumentError.new("Expected a price greater than 0")
+  end
+  
+  @isbn = isbn
+  @price = price
+end
+
+def price_as_string
+  "$%.2f" % @price
+end
+
+def isbn
+  @isbn
+end
+
+def isbn=(x)
+  @isbn = x
+end
+
+def price
+  @price
+end
+
+def price=(x)
+  @price = x
+end
+
 end
