@@ -21,12 +21,12 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
-  if arr.empty? || arr.length == 1
+  if arr.empty? || arr.length == 1 
     false
   else
-    for i in 0..arr.length
-      for j in i..arr.length
-        if i + j == n
+    for i in 0..arr.length - 1
+      for j in i + 1..arr.length - 1
+        if arr[i] + arr[j] == n
           return true
         end
       end
@@ -74,7 +74,6 @@ end
 def isbn
   @isbn
 end
-
 def isbn=(x)
   @isbn = x
 end
@@ -82,7 +81,6 @@ end
 def price
   @price
 end
-
 def price=(x)
   @price = x
 end
